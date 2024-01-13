@@ -1,0 +1,276 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 7%;
+    display: flex;
+    z-index: 1000;
+}
+
+header .logo {
+    font-weight: bolder;
+    font-size: 25px;
+    color: #06BACA;
+}
+
+header .navbar ul {
+    list-style: none;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a {
+    font-size: 20px;
+    padding: 20px;
+    color: #06BACA;
+    display: block;
+    text-decoration: none;
+}
+
+header .navbar ul li a:hover {
+    background: #06BACA;
+    color: #ffffff;
+}
+
+header .navbar ul li ul {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: #ffffff;
+    display: none;
+}
+
+header .navbar ul li ul li {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+header .navbar ul li:hover>ul {
+    display: initial;
+}
+
+#menu-bar {
+    display: none;
+}
+
+header label {
+    font-size: 20px;
+    color: #06BACA;
+    cursor: pointer;
+    display: none;
+}
+
+header .navbar button.join-now {
+    margin-top: 12%;
+    background-color: #06BACA;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat scroll center scroll;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: relative;
+}
+
+
+.carousel-item::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    opacity: 0.7;
+}
+
+.carousel-caption {
+    padding-right: 10%;
+    bottom: 10%;
+}
+
+.carousel-caption h5 {
+    font-size: 4vw;
+    padding-right: 15%;
+    font-weight: bold;
+    text-align: left;
+}
+
+.carousel-caption p {
+    font-size: 2vw;
+    text-align: left;
+    top: 2rem;
+    padding-right: 8%;
+}
+
+.slider-btn {
+    margin-top: 5vh;
+    padding-right: 70%;
+}
+
+.slider-btn .btn {
+    background-color: #06BACA;
+    color: white;
+    border-radius: 0;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    margin-right: 15px;
+}
+
+.container{
+    margin-top: 5%;
+}
+
+
+.service-col {
+    margin-left: 1%;
+    background-color: aliceblue;
+}
+
+
+.service-col:hover {
+    margin-left: 1%;
+    background-color: #06BACA;
+    border-radius: 20px;
+}
+
+/************* Responsive ****************/
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        padding-right: 5%;
+        bottom: 5%;
+    }
+
+    .carousel-caption h5 {
+        font-size: 6vw;
+        padding-right: 5%;
+    }
+
+    .carousel-caption p {
+        font-size: 3vw;
+        top: 2rem;
+        padding-right: 5%;
+    }
+
+    .slider-btn {
+        margin-top: 3vh;
+        padding-right: 5%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 980px) {
+    .carousel-caption {
+        padding-right: 8%;
+        bottom: 8%;
+    }
+
+    .carousel-caption h5 {
+        font-size: 3.5vw;
+        padding-right: 8%;
+    }
+
+    .carousel-caption p {
+        font-size: 2vw;
+        top: 2rem;
+        padding-right: 8%;
+    }
+
+    .slider-btn {
+        margin-top: 4vh;
+        padding-right: 8%;
+    }
+}
+
+@media (max-width: 991px) {
+    /* Additional styles for screens up to 991px width */
+    .carousel-caption {
+        padding-right: 8%;
+        bottom: 8%;
+    }
+
+    .carousel-caption h5 {
+        font-size: 3.5vw;
+        padding-right: 8%;
+    }
+
+    .carousel-caption p {
+        font-size: 2vw;
+        top: 2rem;
+        padding-right: 8%;
+    }
+
+    .slider-btn {
+        margin-top: 4vh;
+        padding-right: 8%;
+    }
+}
+@media (max-width: 991px) {
+    header {
+        padding: 20px;
+    }
+
+    header label {
+        display: initial;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-top: 1px solid rgba(0, 0, 0, .1);
+        display: none; 
+    }
+
+    header .navbar ul {
+        width: 100%;
+        text-align: center;
+    }
+
+    header .navbar ul li {
+        width: 100%;
+    }
+
+    header .navbar ul li ul {
+        position: relative;
+        width: 100%;
+        background: #eee;
+    }
+
+    header .navbar ul li:hover>ul {
+        display: initial;
+    }
+
+    #menu-bar:checked~.navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

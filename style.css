@@ -5,8 +5,15 @@
     font-family: Arial, Helvetica, sans-serif;
     text-transform: capitalize;
     text-decoration: none;
+    list-style: none;
+}
+:root {
+    --primary: #06BACA;
 }
 
+
+/***************** header *********************/
+/* Header Styles */
 header {
     position: fixed;
     top: 0;
@@ -21,12 +28,14 @@ header {
     z-index: 1000;
 }
 
+/* Logo Styles */
 header .logo {
     font-weight: bolder;
     font-size: 25px;
     color: #06BACA;
 }
 
+/* Navbar Styles */
 header .navbar ul {
     list-style: none;
 }
@@ -49,6 +58,7 @@ header .navbar ul li a:hover {
     color: #ffffff;
 }
 
+/* Dropdown Styles */
 header .navbar ul li ul {
     position: absolute;
     left: 0;
@@ -66,27 +76,31 @@ header .navbar ul li:hover>ul {
     display: initial;
 }
 
+/* Menu Bar Styles */
 #menu-bar {
     display: none;
 }
 
+/* Label Styles */
 header label {
     font-size: 20px;
-    color: #06BACA;
+    color: var(--primary);
     cursor: pointer;
     display: none;
 }
 
+/* Join Now Button Styles */
 header .navbar button.join-now {
     margin-top: 12%;
-    background-color: #06BACA;
+    background-color: var(--primary);
     border: none;
     cursor: pointer;
     padding: 10px 20px;
     color: #fff;
 }
 
-
+/***************** carousel *********************/
+/* Carousel Item Styles */
 .carousel-item {
     height: 100vh;
     min-height: 300px;
@@ -96,7 +110,7 @@ header .navbar button.join-now {
     position: relative;
 }
 
-
+/* Overlay for Carousel Item */
 .carousel-item::before {
     content: "";
     display: block;
@@ -109,6 +123,7 @@ header .navbar button.join-now {
     opacity: 0.7;
 }
 
+/* Carousel Caption Styles */
 .carousel-caption {
     padding-right: 10%;
     bottom: 10%;
@@ -128,13 +143,32 @@ header .navbar button.join-now {
     padding-right: 8%;
 }
 
-.slider-btn {
-    margin-top: 5vh;
-    padding-right: 70%;
+/* Styles for Previous Carousel Control */
+.carousel-control-prev {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translate(-5%, -50%);
 }
 
+/* Styles for Next Carousel Control */
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(5%, -50%);
+}
+
+/* Slider Button Styles */
+.slider-btn {
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Button Styles within Slider */
 .slider-btn .btn {
-    background-color: #06BACA;
+    background-color: var(--primary);
     color: white;
     border-radius: 0;
     padding: 0.5rem 2rem;
@@ -142,25 +176,391 @@ header .navbar button.join-now {
     margin-right: 15px;
 }
 
-.container{
-    margin-top: 5%;
+
+
+
+/*** Section Title ***/
+/* Section Title Styles */
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+/* Section Title Underline - Before Pseudo-Element */
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+/* About Us Section Styles */
+#about-us {
+    min-height: 400px;
+}
+
+.aboutus {
+    position: relative;
+    height: 100%;
+}
+
+/* Arrow Styles */
+.arrow-class {
+    color: var(--primary);
+}
+
+/* About Image Styles */
+.about-img {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Section Title Underline - After Pseudo-Element */
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+/* Additional Styles for Section Title at Start */
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+
+/*** Service ***/
+/* Service Item Styles */
+.service-item {
+    background: white;
+    transition: .5s; /* Smooth transition effect on hover */
+}
+
+/* Service Icon Styles */
+.serice-icon {
+    color: var(--primary);
+}
+
+/* Hover Styles for Service Item */
+.service-item:hover {
+    color: white; /* Text color on hover */
+    margin-top: -10px; /* Move the item up on hover */
+    background: var(--primary); /* Background color on hover */
+}
+
+/* Hover Styles for All Child Elements of Service Item */
+.service-item:hover * {
+    color: white !important; /* Override any color settings to white on hover */
+}
+
+/* Hover Styles for Course Item Image */
+.course-item:hover img {
+    transform: scale(1.1); /* Zoom in effect on hover */
+}
+
+/* Transition Effect for Course Item Image */
+.course-item img {
+    transition: transform 0.5s; /* Smooth transition effect on image zoom */
+}
+
+/*** Categories & Courses ***/
+/* Transition Effect for Category and Course Item Images */
+.category img,
+.course-item img {
+    transition: .5s; /* Smooth transition effect on image hover */
+}
+
+/* Minimum Height for Image Mark Div */
+.img-mark-div {
+    min-height: 350px;
+}
+
+/* Object Fit for Image Mark */
+.img-mark {
+    object-fit: cover;
+}
+
+/* Category Text Styles */
+.cat-text {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+/* Category Text Positioning Styles */
+.text-category {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+}
+
+/* Section Title Styles */
+.section-title {
+    background-color: #fff;
+    color: var(--primary);
+    padding: 1rem 3rem;
+}
+
+/* Text Course Styles */
+.text-cat-course {
+    text-align: center;
+    background-color: #6c757d; /* Background color for text course */
+    bottom: 0;
+    right: 0;
+}
+
+/* Text Course Styles */
+.text-course {
+    color: #6c757d;
+}
+
+/* Hover Styles for Category and Course Item Images */
+.category a:hover img,
+.course-item:hover img {
+    transform: scale(1.1); /* Zoom in effect on hover */
+}
+
+/* Text Course Styles for Primary Color */
+.text-course,
+.star-course {
+    color: var(--primary);
+}
+
+/* Text Course Styles for Primary Color */
+.text-course,
+.detail-course {
+    color: var(--primary);
+}
+
+/* Read More Button Styles */
+.read-more-btn {
+    border-radius: 30px;
+    background-color: var(--primary);
+    color: #fff;
 }
 
 
-.service-col {
-    margin-left: 1%;
-    background-color: aliceblue;
+
+/*** Team ***/
+/* Team Item Image Transition Effect */
+.team-item img {
+    transition: .5s; /* Smooth transition effect on team item image */
+}
+
+/* Hover Effect for Team Item Image */
+.team-item:hover img {
+    transform: scale(1.1); /* Zoom in effect on hover */
+
+}
+
+/* Square Button Styles */
+.btn-sm-square {
+    color: #fff;
+    background-color: var(--primary);
+    border: none;
+}
+
+/* Hover Styles for Square Button */
+.btn-sm-square:hover {
+    color: var(--primary);
+    background-color: #FFFFFF;
+    border: none;
+}
+
+/* Margin Adjustment for ID #expert-instru */
+#expert-instru {
+    margin-top: -23px;
+}
+
+/*** Testimonial ***/
+
+/* Testimonial Carousel Overlay Gradient (Before and After) */
+.testimonial-carousel::before,
+.testimonial-carousel::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 1;
+}
+
+/* Testimonial Text Transition Effect */
+.testimonial-carousel .owl-item .testimonial-text,
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    transition: .5s;
+}
+
+/* Testimonial Background Styles for Centered Item */
+.testimonial-carousel .owl-item.center .testimonial-text {
+    background: var(--primary) !important;
+}
+
+/* Testimonial Text Color Styles for Centered Item */
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    color: #FFFFFF !important;
+}
+
+/* Dots Styles for Testimonial Carousel */
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* Dot Styles for Testimonial Carousel */
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid red;
+    transition: .5s;
+}
+
+/* Active Dot Styles for Testimonial Carousel */
+.testimonial-carousel .owl-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
 }
 
 
-.service-col:hover {
-    margin-left: 1%;
+
+/*** Footer ***/
+/* Styles for Social Media Icons in Footer */
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    font-weight: normal;
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s; /* Smooth transition effect */
+}
+
+/* Hover Styles for Social Media Icons in Footer */
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+/* Styles for "elearn-text" class in Footer */
+.footer .elearn-text {
+    text-decoration: none;
+}
+
+/* Styles for Link Buttons in Footer */
+.footer .btn.btn-link {
+    display: block;
+    text-decoration: none;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s; /* Smooth transition effect */
+}
+
+/* Icon Styles for Link Buttons in Footer */
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105"; /* Font Awesome icon for a link */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+/* Hover Styles for Link Buttons in Footer */
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+/* Copyright Section Styles in Footer */
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+/* Styles for Links in Copyright Section */
+.footer .copyright a {
+    color: var(--light);
+}
+
+/* Footer Menu Styles */
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+/* Styles for Last Link in Footer Menu */
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+/* Styles for Signup Section in Footer */
+.signup {
+    position: relative;
+    max-width: 400px;
+    color: #06BACA;
+}
+
+/* Button Styles for Signup Section in Footer */
+.btnsign {
+    position: absolute;
+    top: 0;
     background-color: #06BACA;
-    border-radius: 20px;
 }
+
+
+
+
 
 /************* Responsive ****************/
 
+
+@media (min-width: 768px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 200px;
+    }
+}
+
+@media (min-width: 992px) {
+    .testimonial-carousel::before,
+    .testimonial-carousel::after {
+        width: 300px;
+    }
+}
 @media (max-width: 768px) {
     .carousel-caption {
         padding-right: 5%;
@@ -208,7 +608,6 @@ header .navbar button.join-now {
 }
 
 @media (max-width: 991px) {
-    /* Additional styles for screens up to 991px width */
     .carousel-caption {
         padding-right: 8%;
         bottom: 8%;
@@ -274,3 +673,15 @@ header .navbar button.join-now {
         align-items: center;
     }
 }
+@media(max-width: 767px){
+    .footer-col{
+      width: 50%;
+      margin-bottom: 30px;
+  }
+  }
+  @media(max-width: 574px){
+    .footer-col{
+      width: 100%;
+  }
+  }
+  
